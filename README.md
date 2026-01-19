@@ -1,4 +1,4 @@
-# klipper-gcode-scanner
+# klipper-gcode-scanner 🔍
 
 ## Description
 **klipper-gcode-scanner** is a Klipper ecosystem extension that automatically detects removable storage devices (such as USB flash drives) connected to the printer host and scans their root directory for G-code files. Any `.gcode` files found are made available in KlipperScreen alongside G-code files already stored locally on the printer.
