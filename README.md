@@ -66,3 +66,45 @@ The scan is intentionally limited to the filesystem root to ensure fast, predict
 
 ## Notes
 This project focuses on simplicity, reliability, and tight integration with the Klipper ecosystem by providing a fast, surface-level G-code discovery mechanism for removable storage devices.
+
+## Installation
+### Requirements
+- Python 3.9+
+- A Klipper/Moonraker host with a writable G-code directory (e.g. `~/printer_data/gcodes`)
+- Removable media mounted under a predictable base path (default: `/media/usb`)
+
+### Quick install (recommended)
+1. Install the package:
+   ```bash
+   pip install .
+   ```
+2. Install the configuration file:
+   ```bash
+   sudo mkdir -p /etc/klipper-gcode-scanner
+   sudo cp config/klipper-gcode-scanner.toml /etc/klipper-gcode-scanner/config.toml
+   ```
+3. Install the systemd service:
+   ```bash
+   sudo cp systemd/klipper-gcode-scanner.service /etc/systemd/system/klipper-gcode-scanner.service
+   sudo systemctl daemon-reload
+   sudo systemctl enable --now klipper-gcode-scanner.service
+   ```
+
+### Manual usage
+Run a single scan:
+```bash
+klipper-gcode-scanner --config /etc/klipper-gcode-scanner/config.toml scan
+```
+
+Run continuously (foreground):
+```bash
+klipper-gcode-scanner --config /etc/klipper-gcode-scanner/config.toml daemon
+```
+
+### Configuration
+The default configuration file is provided at `config/klipper-gcode-scanner.toml`. Adjust paths as needed:
+- `mount_base`: where removable drives are mounted.
+- `gcode_dir`: Moonraker G-code directory that KlipperScreen monitors.
+- `extensions`: list of file extensions to expose.
+- `scan_interval`: scan interval in seconds.
+- `state_path`: where the scanner records the device state.

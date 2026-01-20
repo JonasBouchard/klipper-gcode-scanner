@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "klipper-gcode-scanner"
+version = "0.1.0"
+description = "Scan removable media for G-code and expose it to Klipper/Moonraker."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  {name = "OpenAI"}
+]
+
+[project.scripts]
+klipper-gcode-scanner = "klipper_gcode_scanner.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

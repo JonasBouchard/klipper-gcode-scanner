@@ -1,0 +1,13 @@
+[Unit]
+Description=Klipper G-code Scanner
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/klipper-gcode-scanner --config /etc/klipper-gcode-scanner/config.toml daemon
+Restart=on-failure
+User=pi
+Group=pi
+
+[Install]
+WantedBy=multi-user.target
