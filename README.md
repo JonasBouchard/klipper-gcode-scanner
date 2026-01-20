@@ -73,11 +73,5 @@ The scan is intentionally limited to the filesystem root to ensure fast, predict
 - Remove the drive → those files disappear.
 - No manual file management on the printer host is required.
 
-## Out of Scope
-- Recursive directory scanning.
-- Automatic copying of files to local storage.
-- Advanced G-code analysis (previews, thumbnails, time estimation).
-- Support for non-G-code file types.
-
 ## Notes
 This project focuses on simplicity, reliability, and tight integration with the Klipper ecosystem by providing a fast, surface-level G-code discovery mechanism for removable storage devices.
