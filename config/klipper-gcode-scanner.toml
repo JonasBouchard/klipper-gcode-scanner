@@ -1,0 +1,17 @@
+# Base directory where removable media is mounted.
+mount_base = "/media/usb"
+
+# Moonraker/Klipper G-code directory.
+gcode_dir = "/home/pi/printer_data/gcodes"
+
+# File extensions to expose.
+extensions = [".gcode"]
+
+# Scan interval in seconds.
+scan_interval = 5.0
+
+# State file to track known devices.
+state_path = "/var/lib/klipper-gcode-scanner/state.json"
+
+# Logging level (DEBUG, INFO, WARNING).
+log_level = "INFO"
