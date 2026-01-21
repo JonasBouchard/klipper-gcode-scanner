@@ -95,6 +95,11 @@ The install script wires up the config and systemd service without using `pip`.
 sudo ./install.sh
 ```
 
+### Moonraker update manager
+The installer attempts to add the update manager block to
+`~/printer_data/config/moonraker.conf`. If your Moonraker config lives elsewhere,
+add the block manually when prompted.
+
 ### Manual install (no pip)
 If you prefer to install by hand:
 1. Install the configuration file:
