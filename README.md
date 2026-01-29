@@ -77,36 +77,8 @@ This project focuses on simplicity, reliability, and tight integration with the 
    cd ~
    git clone https://github.com/JonasBouchard/klipper-gcode-scanner.git
    cd klipper-gcode-scanner
-   ```
-
-### Run the installer (recommended)
-The install script wires up the config and systemd service without using `pip`.
-```bash
-sudo ./install.sh
-```
-
-### Moonraker update manager
-The installer attempts to add the update manager block to
-`~/printer_data/config/moonraker.conf`. If your Moonraker config lives elsewhere,
-add the block manually when prompted.
-
-### Manual install (no pip)
-If you prefer to install by hand:
-1. Install the configuration file:
-   ```bash
-   sudo mkdir -p /etc/klipper-gcode-scanner
-   sudo cp config/klipper-gcode-scanner.toml /etc/klipper-gcode-scanner/config.toml
-   ```
-2. Install the systemd service (update placeholders as needed):
-   ```bash
-   sudo sed \
-     -e "s|@REPO_DIR@|$HOME/klipper-gcode-scanner|g" \
-     -e "s|@USER@|$USER|g" \
-     -e "s|@GROUP@|$USER|g" \
-     systemd/klipper-gcode-scanner.service \
-     | sudo tee /etc/systemd/system/klipper-gcode-scanner.service >/dev/null
-   sudo systemctl daemon-reload
-   sudo systemctl enable --now klipper-gcode-scanner.service
+   sudo chmod +x ./install.sh
+   sudo ./install.sh
    ```
 
 ### Manual usage
