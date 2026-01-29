@@ -73,19 +73,9 @@ This project focuses on simplicity, reliability, and tight integration with the 
 - A Klipper/Moonraker host with a writable G-code directory (e.g. `~/printer_data/gcodes`)
 - Removable media mounted under a predictable base path (default: `/media/usb`)
 
-### Clone the repository
-1. SSH into your Klipper host (Raspberry Pi, etc.):
-   ```bash
-   ssh pi@mainsailos.local
-   ```
-   (Or use the host IP address instead of `mainsailos.local`.)
-2. Clone the repository:
    ```bash
    cd ~
-   git clone <repo-url>
-   ```
-3. Move into the repo:
-   ```bash
+   git clone https://github.com/JonasBouchard/klipper-gcode-scanner.git
    cd klipper-gcode-scanner
    ```
 
